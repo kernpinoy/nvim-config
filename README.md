@@ -4,8 +4,13 @@
 
 ### To install
 ```
-git clone https://github.com/kernpinoy/nvim-config
+rm -rf $HOME/.config/nvim
+
+git clone https://github.com/kernpinoy/nvim-config $HOME/.config/nvim
+
 cd nvim-config
+
 chmod +x setup-nvim.sh
+
 ./setup-nvim.sh
 ```
