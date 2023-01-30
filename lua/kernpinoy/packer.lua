@@ -60,5 +60,14 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
 
+  -- Status line
   use 'feline-nvim/feline.nvim'
+
+  -- Toggle terminal
+  use {
+      "akinsho/toggleterm.nvim", 
+      tag = '*', config = function()
+          require("toggleterm").setup()
+      end
+  }
 end)
