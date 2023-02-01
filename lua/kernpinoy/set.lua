@@ -23,3 +23,6 @@ vim.opt.incsearch = true
 
 -- 24 bit colors
 vim.opt.termguicolors = true
+
+-- Netrw options
+vim.g.netrw_bufsettings = "noma nomod nonu nowrap ro buflisted"
