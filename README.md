@@ -4,6 +4,8 @@
 
 ### To install
 
+Dependency: [ripgrep](https://github.com/BurntSushi/ripgrep)
+
 ```
 rm -rf $HOME/.local/share/nvim
 
