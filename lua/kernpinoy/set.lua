@@ -8,6 +8,11 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- Backup options
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.cache/undodir"
+vim.opt.undofile = true
+
 -- Smart indentation
 vim.opt.smartindent = true
 
