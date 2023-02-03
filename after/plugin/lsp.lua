@@ -5,7 +5,17 @@ lsp.preset('recommended')
 
 -- (Optional) Configure lua language server for neovim
 -- lsp.nvim_workspace()
-lsp.setup()
+
+-- Fix Undefined global 'vim'
+lsp.configure('sumneko_lua', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
