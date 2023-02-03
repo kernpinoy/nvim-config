@@ -1,5 +1,8 @@
 local builtin = require('telescope.builtin')
 
+require("telescope").load_extension('harpoon')
+
+-- For navigation
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<leader>pp', builtin.diagnostics, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
