@@ -13,8 +13,11 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- Best plugin: Harpoon!
+    use 'ThePrimeagen/harpoon'
+
     -- Change colorscheme
-    use ({ 
+    use ({
         "catppuccin/nvim",
         as = "catppuccin",
         config = function()
@@ -35,7 +38,7 @@ return require('packer').startup(function(use)
     -- LSP 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+       branch = 'v1.x',
         requires = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
