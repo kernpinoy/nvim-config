@@ -5,6 +5,32 @@ lsp.preset('recommended')
 
 -- (Optional) Configure lua language server for neovim
 -- lsp.nvim_workspace()
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
+-- Go config
+require'lspconfig'.golangci_lint_ls.setup {
+    settings = {
+        gopls = {
+            gofumpt = true
+        }
+    }
+}
+
+require'lspconfig'.gopls.setup {
+    settings = {
+        gopls = {
+            gofumpt = true
+        }
+    }
+}
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {

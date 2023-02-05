@@ -13,17 +13,26 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    -- Best plugin: Harpoon!
+    use {
+        'stevearc/aerial.nvim',
+        config = function() require('aerial').setup() end
+    }
+
+  -- Best plugin: Harpoon!
     use 'ThePrimeagen/harpoon'
 
     -- Change colorscheme
     use ({
         "catppuccin/nvim",
         as = "catppuccin",
-        config = function()
-            vim.cmd("colorscheme catppuccin-mocha")
-        end
+        config = vim.cmd.colorscheme "catppuccin"
+    })
 
+    use ({
+        'rcarriga/nvim-notify',
+        config = function ()
+           vim.notify = require("notify")
+        end
     })
 
     -- Treesitter
@@ -68,7 +77,7 @@ return require('packer').startup(function(use)
 
     -- Toggle terminal
     use {
-        "akinsho/toggleterm.nvim", 
+        "akinsho/toggleterm.nvim",
         tag = '*', config = function()
             require("toggleterm").setup()
         end

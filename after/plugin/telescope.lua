@@ -1,6 +1,7 @@
 local builtin = require('telescope.builtin')
 
 require("telescope").load_extension('harpoon')
+require('telescope').load_extension('aerial')
 
 -- For navigation
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
