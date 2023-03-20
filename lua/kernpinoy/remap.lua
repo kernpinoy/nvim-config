@@ -13,6 +13,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- cringe 
 vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("n", "<C-c>", "<Cmd>BufferClose<CR>")
+vim.keymap.set("n", "<C-S-c>", "<Cmd>BufferClose!<CR>")
 
 -- greatest remap ever (said by ThePrimagen)
 vim.keymap.set("x",  "<leader>p", "\"_dP")

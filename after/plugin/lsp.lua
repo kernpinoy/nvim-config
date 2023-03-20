@@ -2,6 +2,7 @@
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
+local lspconfig = require('lspconfig')
 
 -- (Optional) Configure lua language server for neovim
 -- lsp.nvim_workspace()
@@ -16,7 +17,7 @@ require("mason").setup({
 })
 
 -- Go config
-require'lspconfig'.golangci_lint_ls.setup {
+lspconfig.golangci_lint_ls.setup {
     settings = {
         gopls = {
             gofumpt = true
@@ -24,12 +25,27 @@ require'lspconfig'.golangci_lint_ls.setup {
     }
 }
 
-require'lspconfig'.gopls.setup {
+lspconfig.gopls.setup {
     settings = {
         gopls = {
             gofumpt = true
         }
     }
+}
+
+lspconfig.html.setup {
+    settings = {
+        html = {
+            prettier = true
+        }
+    }
+}
+
+-- Rust config
+lspconfig.rust_analyzer.setup {
+  cmd = {
+    "rustup", "run", "stable", "rust-analyzer",
+  }
 }
 
 -- Fix Undefined global 'vim'
